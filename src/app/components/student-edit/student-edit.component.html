@@ -1,1 +1,70 @@
-<p>student-edit works!</p>
+<div class="container">
+  <h1>Update Student</h1>
+  <form [formGroup]="form" (ngSubmit)="submit()">
+    <div class="form-group">
+      <label for="studentid">Student-ID:</label>
+      <input
+        formControlName="studentid"
+        id="studentid"
+        type="text"
+        [(ngModel)]="student.studentid"
+        class="form-control"
+      />
+      <div
+        *ngIf="
+          formValidate['studentid'].touched && formValidate['studentid'].invalid
+        "
+        class="alert alert-danger"
+      >
+        <div
+          *ngIf="
+            formValidate['studentid'].errors &&
+            formValidate['studentid'].errors['required']
+          "
+        >
+          Student-ID is required.
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input
+        formControlName="name"
+        id="name"
+        type="text"
+        [(ngModel)]="student.name"
+        class="form-control"
+      />
+
+      <div
+        *ngIf="formValidate['name'].touched && formValidate['name'].invalid"
+        class="alert alert-danger"
+      >
+        <div
+          *ngIf="
+            formValidate['name'].errors &&
+            formValidate['name'].errors['required']
+          "
+        >
+          Name is required.
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="major">Major</label>
+      <input
+        formControlName="major"
+        id="major"
+        type="text"
+        [(ngModel)]="student.major"
+        class="form-control"
+      />
+    </div>
+
+    <button class="btn btn-primary" type="submit" [disabled]="!form.valid">
+      Update
+    </button>
+  </form>
+</div>

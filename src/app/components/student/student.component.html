@@ -1,1 +1,37 @@
-<p>student works!</p>
+<div class="container">
+  <h1>List of Students</h1>
+  <table class="table table-bordered">
+    <tr>
+      <th>studentid</th>
+      <th>student name</th>
+      <th>Major</th>
+      <th width="220px">Action</th>
+    </tr>
+    <tr *ngFor="let student of listOfStudent">
+      <td>{{ student.studentid }}</td>
+      <td>{{ student.name }}</td>
+      <td>{{ student.major }}</td>
+      <td>
+        <a
+          href="#"
+          [routerLink]="['/student/', student.id]"
+          class="btn btn-info"
+          >View</a
+        >
+        <a
+          href="#"
+          [routerLink]="['/student-edit/', student.id]"
+          class="btn btn-primary"
+          >Edit</a
+        >
+        <button
+          type="button"
+          (click)="deleteStudent(student.id)"
+          class="btn btn-danger"
+        >
+          Delete
+        </button>
+      </td>
+    </tr>
+  </table>
+</div>

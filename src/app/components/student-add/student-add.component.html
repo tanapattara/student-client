@@ -1,1 +1,41 @@
-<p>student-add works!</p>
+<div class="row justify-content-center mt-5">
+  <div class="col-md-4">
+    <form [formGroup]="studentForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label>Name</label>
+        <input
+          class="form-control"
+          type="text"
+          formControlName="name"
+          required
+        />
+      </div>
+
+      <div class="form-group">
+        <label>Student-ID</label>
+        <input
+          class="form-control"
+          type="text"
+          formControlName="studentid"
+          required
+        />
+      </div>
+
+      <div class="form-group">
+        <label>Major</label>
+        <input
+          class="form-control"
+          type="text"
+          formControlName="major"
+          required
+        />
+      </div>
+
+      <div class="form-group">
+        <button class="btn btn-primary btn-block" type="submit">
+          Add Student
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

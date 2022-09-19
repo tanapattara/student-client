@@ -9,6 +9,9 @@ import { StudentAddComponent } from './components/student-add/student-add.compon
 import { StudentDetailComponent } from './components/student-detail/student-detail.component';
 import { StudentEditComponent } from './components/student-edit/student-edit.component';
 
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +23,10 @@ import { StudentEditComponent } from './components/student-edit/student-edit.com
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
